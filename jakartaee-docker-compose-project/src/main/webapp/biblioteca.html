@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS XII - Mi biblioteca</title>
+    <link rel="stylesheet" href="css/styles.css?v=18">
+</head>
+<body>
+    <main class="page library-page">
+        <section class="window library-window" aria-label="Mi biblioteca">
+            <div class="app-topbar">
+                <a class="brand-link" href="home.html">
+                    <img src="img/ms-xii-logo.png" alt="">
+                    <span>MS XII <em>Music</em></span>
+                </a>
+                <nav class="session-actions" aria-label="Navegacion">
+                    <a class="button tiny" href="home.html">Inicio</a>
+                    <a class="button tiny" href="agregar-cancion.html">Agregar cancion</a>
+                    <a class="button tiny" href="index.html" data-logout>Cerrar sesion</a>
+                </nav>
+            </div>
+
+            <div class="library-heading">
+                <h1>Mi Biblioteca</h1>
+                <p>Tus canciones guardadas en una sola lista.</p>
+            </div>
+
+            <form class="library-search compact-search" data-library-search autocomplete="off">
+                <input type="search" name="query" placeholder="Buscar por titulo, artista o etiquetas..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+            </form>
+
+            <div class="album-strip" data-album-list></div>
+            <div class="song-list" data-song-list></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        &copy; 2026 MS XII &mdash; Sistema desarrollado por YH3 | Biblioteca musical
+    </footer>
+    <script src="js/app.js?v=24"></script>
+</body>
+</html>
+

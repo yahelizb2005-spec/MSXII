@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS XII - Recuperar Contrasena</title>
+    <link rel="stylesheet" href="css/styles.css?v=18">
+</head>
+<body>
+    <main class="page library-page account-page">
+        <section class="window library-window account-window" aria-label="Recuperar contrasena">
+            <div class="app-topbar">
+                <a class="brand-link" href="home.html">
+                    <img src="img/ms-xii-logo.png" alt="">
+                    <span>MS XII <em>Music</em></span>
+                </a>
+                <nav class="session-actions" aria-label="Navegacion">
+                    <a class="button tiny" href="home.html">Inicio</a>
+                    <a class="button tiny" href="index.html" data-logout>Cerrar sesion</a>
+                </nav>
+            </div>
+
+            <div class="library-heading">
+                <h1>Recuperar Contrasena</h1>
+            </div>
+
+            <form class="music-form account-form" data-change-password-form autocomplete="off">
+                <label>Correo registrado <input type="email" name="email" required data-account-email></label>
+                <label>Palabra clave de seguridad <input type="text" name="keyword" required></label>
+                <p class="account-help">Debe coincidir con la palabra clave registrada para autorizar el cambio.</p>
+                <label>Nueva contrasena <input type="password" name="password" required></label>
+                <label>Confirmar nueva contrasena <input type="password" name="confirmPassword" required></label>
+                <div class="account-actions">
+                    <button class="button small" type="submit">Guardar nueva contrasena</button>
+                    <a class="button small" href="cuenta.html">Cancelar</a>
+                </div>
+                <p class="form-message" data-message aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        &copy; 2026 MS XII &mdash; Sistema desarrollado por YH3 | Recuperar Contrasena
+    </footer>
+    <script src="js/app.js?v=24"></script>
+</body>
+</html>
+

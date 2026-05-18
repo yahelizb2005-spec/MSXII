@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS XII - Acceso Administrativo</title>
+    <link rel="stylesheet" href="css/styles.css?v=2">
+</head>
+<body>
+    <main class="page">
+        <section class="window compact" aria-label="Acceso Administrativo">
+            <div class="topbar centered">
+                <span></span>
+                <h1 class="title">Acceso Administrativo &mdash; MS XII</h1>
+                <span></span>
+            </div>
+
+            <form class="form-stack" data-admin-login-form>
+                <label class="field no-icon">
+                    <input type="email" name="adminEmail" placeholder="Correo del Admin" autocomplete="email">
+                </label>
+
+                <label class="field no-icon">
+                    <input type="text" name="adminId" placeholder="ID Admin" autocomplete="off">
+                </label>
+
+                <label class="field no-icon">
+                    <input type="password" name="adminCode" placeholder="C&oacute;digo de 6 cifras" inputmode="numeric" autocomplete="off">
+                </label>
+
+                <p class="form-message" data-message aria-live="polite"></p>
+
+                <div class="button-row">
+                    <button class="button" type="submit">Acceder al Panel Administrativo</button>
+                    <a class="button small" href="index.html">Volver</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        &copy; 2026 MS XII &mdash; Acceso exclusivo para administradores | Sistema desarrollado por YH3
+    </footer>
+    <script src="js/app.js?v=24"></script>
+</body>
+</html>
+

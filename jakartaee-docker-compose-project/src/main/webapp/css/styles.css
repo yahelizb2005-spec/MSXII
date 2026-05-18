@@ -1,0 +1,1039 @@
+:root {
+    --gold: #b98221;
+    --gold-dark: #8f5f12;
+    --gold-soft: #ead5a8;
+    --paper: #fffefb;
+    --ink: #6f4308;
+    --line: #eadfc8;
+    --field: #fffaf0;
+    --blue: #4f83d9;
+    --teal: #4ca6a8;
+    --green: #79a85b;
+    --rose: #cb756c;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    background:
+        radial-gradient(circle at 18% 18%, rgba(185, 130, 33, 0.06), transparent 28%),
+        linear-gradient(180deg, #fff 0%, var(--paper) 100%);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+}
+
+a {
+    color: inherit;
+}
+
+.page {
+    min-height: calc(100vh - 58px);
+    display: grid;
+    place-items: center;
+    padding: 56px 32px 36px;
+}
+
+.window {
+    width: min(100%, 1040px);
+    background: rgba(255, 255, 255, 0.94);
+}
+
+.window.compact {
+    width: min(100%, 700px);
+}
+
+.window.narrow {
+    width: min(100%, 460px);
+}
+
+.topbar {
+    display: grid;
+    grid-template-columns: 112px 1fr auto;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid var(--line);
+    padding: 0 0 20px;
+    margin-bottom: 34px;
+}
+
+.topbar.centered {
+    grid-template-columns: 112px 1fr 112px;
+}
+
+.logo-mark {
+    width: 104px;
+    height: auto;
+    justify-self: end;
+}
+
+.title {
+    margin: 0;
+    color: var(--gold-dark);
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.admin-shortcut {
+    justify-self: end;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+.admin-title-link {
+    justify-self: end;
+    font-size: 16px;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.admin-title-link a {
+    text-decoration: none;
+}
+
+.login-layout {
+    width: min(100%, 960px);
+    display: grid;
+    grid-template-columns: 390px 1fr;
+    align-items: center;
+    gap: 48px;
+}
+
+.hero-logo {
+    width: 380px;
+    border: 0;
+    padding: 0;
+    background: #fff;
+}
+
+.login-layout .window {
+    width: 100%;
+}
+
+.login-layout .topbar {
+    grid-template-columns: 1fr;
+    margin-bottom: 20px;
+}
+
+.login-layout .topbar > span {
+    display: none;
+}
+
+.form-stack {
+    display: grid;
+    gap: 16px;
+}
+
+.field {
+    min-height: 48px;
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    align-items: center;
+    border: 1px solid #d8c4a0;
+    background: var(--field);
+    box-shadow: 0 1px 5px rgba(108, 73, 19, 0.12);
+}
+
+.field.no-icon {
+    grid-template-columns: 1fr;
+}
+
+.field span {
+    display: grid;
+    place-items: center;
+    color: var(--gold-dark);
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+}
+
+.field img {
+    width: 18px;
+    height: 14px;
+    object-fit: cover;
+}
+
+.field input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    padding: 12px 14px 12px 0;
+}
+
+.field.no-icon input {
+    padding-left: 16px;
+}
+
+.field input::placeholder,
+.textarea::placeholder {
+    color: #9b6d23;
+    opacity: 0.9;
+}
+
+.form-message {
+    min-height: 24px;
+    margin: 0;
+    color: #a33d2b;
+    text-align: center;
+    font-size: 16px;
+}
+
+.form-message.success {
+    color: #517d2f;
+}
+
+.button-row {
+    display: grid;
+    justify-items: center;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.recovery-link {
+    color: var(--gold-dark);
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.button,
+button.button {
+    min-width: 190px;
+    min-height: 42px;
+    display: inline-grid;
+    place-items: center;
+    border: 2px solid var(--gold-soft);
+    background: linear-gradient(#fffdf8, #fff6e4);
+    color: var(--gold-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 0 0 1px rgba(143, 95, 18, 0.45) inset, 0 2px 5px rgba(88, 56, 13, 0.18);
+}
+
+.button.small {
+    min-width: 140px;
+    min-height: 36px;
+    font-size: 16px;
+}
+
+.button.tiny {
+    min-width: 76px;
+    min-height: 30px;
+    padding: 0 10px;
+    font-size: 13px;
+}
+
+.library-window .button.tiny,
+.album-editor .button.tiny {
+    min-width: 112px;
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: 16px;
+}
+
+.panel-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(130px, 1fr));
+    gap: 26px;
+    margin: 62px 0 38px;
+}
+
+.action-tile {
+    min-height: 72px;
+    display: grid;
+    place-items: center;
+    border: 2px solid var(--gold-soft);
+    background: #fffefb;
+    color: var(--gold-dark);
+    text-decoration: none;
+    padding: 0 18px;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: 0 0 0 1px rgba(143, 95, 18, 0.38) inset;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 22px;
+    color: #573707;
+    font-size: 16px;
+}
+
+.table th,
+.table td {
+    border: 1px solid #d9c49b;
+    padding: 12px 14px;
+    text-align: center;
+}
+
+.table th {
+    background: #fff6e5;
+    color: var(--gold-dark);
+    font-weight: 700;
+}
+
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.stat-card {
+    min-height: 112px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #d9c49b;
+    background: #fffdf8;
+    text-align: center;
+    padding: 16px;
+    font-size: 17px;
+}
+
+.stat-card strong {
+    display: block;
+    color: #2f5ea8;
+    font-size: 34px;
+    line-height: 1.1;
+}
+
+.charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.chart-card {
+    border: 1px solid #d9c49b;
+    background: #fff;
+    padding: 9px;
+}
+
+.chart-title {
+    margin: 0 0 8px;
+    color: var(--gold-dark);
+    text-align: center;
+    font-size: 12px;
+}
+
+.bars {
+    height: 96px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: end;
+    gap: 7px;
+    border-left: 1px solid #d6d6d6;
+    border-bottom: 1px solid #d6d6d6;
+    padding: 8px 7px 0;
+}
+
+.bars i {
+    display: block;
+    background: linear-gradient(180deg, #8ab2f2, var(--blue));
+}
+
+.pie {
+    width: 92px;
+    aspect-ratio: 1;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: conic-gradient(var(--blue) 0 46%, var(--gold) 46% 76%, var(--teal) 76% 91%, var(--rose) 91% 100%);
+}
+
+.line-chart {
+    height: 96px;
+    background:
+        linear-gradient(140deg, transparent 0 16%, var(--blue) 17% 19%, transparent 20% 34%, var(--gold) 35% 37%, transparent 38% 54%, var(--blue) 55% 57%, transparent 58% 74%, var(--green) 75% 77%, transparent 78%),
+        repeating-linear-gradient(0deg, transparent 0 23px, #ececec 24px),
+        repeating-linear-gradient(90deg, transparent 0 31px, #f0f0f0 32px);
+    border-left: 1px solid #d6d6d6;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.textarea {
+    width: 100%;
+    min-height: 92px;
+    border: 1px solid #d8c4a0;
+    outline: 0;
+    background: var(--field);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    padding: 14px;
+    resize: vertical;
+}
+
+.success-card {
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+    border: 3px solid var(--gold-soft);
+    box-shadow: 0 0 0 1px rgba(143, 95, 18, 0.4) inset, 0 2px 7px rgba(88, 56, 13, 0.15);
+    padding: 24px 30px 14px;
+    text-align: center;
+}
+
+.success-card img {
+    width: 86px;
+}
+
+.success-card h1 {
+    margin: 0;
+    color: var(--gold-dark);
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.success-card p {
+    max-width: 320px;
+    margin: 0;
+    font-size: 12px;
+}
+
+.library-page {
+    align-content: stretch;
+    place-items: stretch;
+    padding: 30px 34px 24px;
+}
+
+.library-window {
+    width: 100%;
+    min-height: calc(100vh - 112px);
+    border: 1px solid #eee7dc;
+    padding: 36px 56px 44px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.form-window {
+    width: 100%;
+}
+
+.album-window {
+    width: 100%;
+}
+
+.app-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    border-bottom: 1px solid #efe6d7;
+    padding-bottom: 18px;
+    margin-bottom: 28px;
+}
+
+.brand-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #7d520f;
+    text-decoration: none;
+    font-size: 19px;
+}
+
+.brand-link img {
+    width: 40px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.brand-link em {
+    color: #c08a31;
+    font-style: italic;
+}
+
+.session-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    color: #93651c;
+    font-size: 16px;
+}
+
+.library-search {
+    width: min(100%, 680px);
+    margin: 0 auto 22px;
+}
+
+.library-search input {
+    width: 100%;
+    height: 48px;
+    border: 1px solid #b99a63;
+    background: #fffdf8;
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    text-align: center;
+    padding: 8px 16px;
+}
+
+.compact-search {
+    margin-bottom: 28px;
+}
+
+.filter-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 38px;
+}
+
+.filter-tabs button {
+    min-width: 92px;
+    min-height: 38px;
+    border: 1px solid #dcc9a7;
+    background: #fffaf0;
+    color: #8a611a;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.filter-tabs button.is-active {
+    background: #c79539;
+    color: #fff;
+}
+
+.dashboard-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.dashboard-card {
+    min-height: 245px;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 14px;
+    border: 1px solid #efe4cf;
+    background: #fffdf8;
+    padding: 30px 24px;
+    text-align: center;
+}
+
+.card-icon {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    color: #c79539;
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.dashboard-card h2,
+.library-heading h1 {
+    margin: 0;
+    color: #b77d1c;
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.dashboard-card p,
+.library-heading p {
+    margin: 0;
+    color: #8a611a;
+    font-size: 17px;
+    line-height: 1.45;
+}
+
+.library-heading {
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.song-list {
+    display: grid;
+    gap: 14px;
+}
+
+.album-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.album-card {
+    display: grid;
+    grid-template-columns: 78px 1fr;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid #efe4cf;
+    background: #fffdf8;
+    padding: 14px;
+    color: #5e3c08;
+    text-decoration: none;
+}
+
+.album-card .song-cover {
+    width: 70px;
+}
+
+.album-card strong {
+    display: block;
+    font-size: 18px;
+}
+
+.album-card span {
+    display: block;
+    color: #93651c;
+    font-size: 15px;
+}
+
+.song-row {
+    display: grid;
+    grid-template-columns: 78px 1fr auto;
+    align-items: center;
+    gap: 18px;
+    border-bottom: 1px solid #efe6d7;
+    padding: 14px 0;
+}
+
+.song-cover,
+.album-cover {
+    display: grid;
+    place-items: center;
+    border: 1px solid #d3b77d;
+    background:
+        linear-gradient(160deg, rgba(34, 30, 60, 0.4), rgba(211, 136, 35, 0.18)),
+        linear-gradient(0deg, #1d2942 0 35%, #e08d37 36% 49%, #f5c05a 50% 64%, #3c4d66 65% 100%);
+    color: #f7d983;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
+}
+
+.song-cover {
+    width: 70px;
+    aspect-ratio: 1;
+    font-size: 14px;
+}
+
+.song-info strong {
+    display: block;
+    color: #4d3208;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.song-info span {
+    display: block;
+    color: #93651c;
+    font-size: 15px;
+}
+
+.song-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.danger {
+    border-color: #dca797;
+    background: linear-gradient(#fff9f6, #ffe7de);
+    color: #9a3b28;
+}
+
+.music-form {
+    width: min(100%, 980px);
+    display: grid;
+    gap: 16px;
+    margin: 0 auto;
+}
+
+.music-form label {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    align-items: center;
+    gap: 14px;
+    color: #70480b;
+    font-size: 17px;
+}
+
+.music-form input,
+.music-form select {
+    height: 42px;
+    border: 1px solid #dcc9a7;
+    background: #fffdf8;
+    color: #4d3208;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    padding: 7px 12px;
+}
+
+.music-form input[type="file"] {
+    height: auto;
+    padding: 9px 12px;
+}
+
+.music-form .button,
+.album-editor .button {
+    justify-self: center;
+}
+
+.cover-preview {
+    width: 170px;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    justify-self: center;
+    border: 1px solid #d3b77d;
+    background: #fffaf0;
+    color: #9a6b20;
+    overflow: hidden;
+    text-align: center;
+    font-size: 15px;
+}
+
+.cover-preview img,
+.album-cover img,
+.song-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.songs-editor {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    align-items: start;
+    gap: 14px;
+}
+
+.editor-label {
+    color: #70480b;
+    font-size: 17px;
+}
+
+.song-fields {
+    display: grid;
+    gap: 10px;
+}
+
+.song-field {
+    display: grid;
+    grid-template-columns: 110px minmax(180px, 1fr) minmax(180px, 0.85fr) auto;
+    align-items: center;
+    gap: 10px;
+}
+
+.song-field span {
+    color: #70480b;
+    font-size: 15px;
+}
+
+.song-field .button {
+    min-width: 58px;
+    min-height: 36px;
+    padding: 0 10px;
+}
+
+.songs-editor > .button {
+    grid-column: 2;
+    justify-self: start;
+}
+
+.album-detail {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    gap: 38px;
+    align-items: start;
+}
+
+.album-cover {
+    width: 250px;
+    aspect-ratio: 1;
+    padding: 24px;
+    font-size: 24px;
+    font-style: italic;
+    overflow: hidden;
+}
+
+.album-cover.has-image {
+    padding: 0;
+    background: #fff;
+}
+
+.album-meta h1 {
+    margin: 0 0 18px;
+    color: #c28120;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.album-meta p,
+.album-track {
+    border-bottom: 1px solid #efe6d7;
+    margin: 0;
+    padding: 12px 0;
+    color: #5e3c08;
+    font-size: 17px;
+}
+
+.album-track {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 3px;
+}
+
+.album-track small {
+    color: #9a6b20;
+    font-size: 15px;
+}
+
+.album-meta .album-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 16px;
+}
+
+.album-editor {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 34px;
+    align-items: start;
+}
+
+.album-editor .music-form {
+    width: 100%;
+}
+
+.account-window {
+    max-width: 920px;
+}
+
+.account-page {
+    align-content: center;
+    place-items: center;
+    padding: 34px 22px;
+}
+
+.account-page .library-window {
+    min-height: auto;
+    padding: 34px 44px 38px;
+}
+
+.account-page .app-topbar {
+    justify-content: center;
+}
+
+.account-page .brand-link {
+    font-size: 18px;
+}
+
+.account-page .session-actions {
+    position: absolute;
+    right: 44px;
+    top: 28px;
+}
+
+.account-summary {
+    width: min(100%, 680px);
+    display: grid;
+    gap: 0;
+    margin: 0 auto;
+}
+
+.account-section-title {
+    margin: 18px 0 8px;
+    border-bottom: 1px solid #efe6d7;
+    padding-bottom: 8px;
+    color: #c28120;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.account-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 16px;
+    align-items: center;
+    border-bottom: 1px solid #efe6d7;
+    padding: 10px 0;
+    color: #5e3c08;
+    font-size: 16px;
+}
+
+.account-row strong {
+    color: #70480b;
+    font-weight: 700;
+}
+
+.account-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.account-form {
+    width: min(100%, 660px);
+    justify-items: stretch;
+}
+
+.account-help {
+    margin: -8px 0 0 194px;
+    color: #70480b;
+    font-size: 13px;
+}
+
+.danger-card h1 {
+    color: #5e3c08;
+    font-size: 26px;
+}
+
+.site-footer {
+    min-height: 58px;
+    display: grid;
+    place-items: start center;
+    border-top: 1px solid var(--line);
+    padding: 14px 20px 0;
+    color: var(--gold-dark);
+    text-align: center;
+    font-size: 14px;
+}
+
+@media (max-width: 760px) {
+    .page {
+        padding: 28px 18px 22px;
+    }
+
+    .login-layout,
+    .panel-actions,
+    .dashboard-actions,
+    .album-detail,
+    .album-editor,
+    .stats-cards,
+    .charts {
+        grid-template-columns: 1fr;
+    }
+
+    .library-window {
+        min-height: calc(100vh - 80px);
+        padding: 22px 16px;
+    }
+
+    .brand-link {
+        font-size: 17px;
+    }
+
+    .brand-link img {
+        width: 34px;
+        height: 26px;
+    }
+
+    .app-topbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .session-actions {
+        justify-content: flex-start;
+    }
+
+    .song-row {
+        grid-template-columns: 70px 1fr;
+    }
+
+    .song-actions {
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+    }
+
+    .music-form label {
+        grid-template-columns: 1fr;
+    }
+
+    .songs-editor,
+    .song-field {
+        grid-template-columns: 1fr;
+    }
+
+    .songs-editor > .button {
+        grid-column: 1;
+    }
+
+    .album-cover {
+        width: min(220px, 100%);
+    }
+
+    .dashboard-card {
+        min-height: 190px;
+    }
+
+    .album-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .account-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .account-page .session-actions {
+        position: static;
+    }
+
+    .account-help {
+        margin: -8px 0 0;
+    }
+
+    .hero-logo {
+        width: min(280px, 88vw);
+        justify-self: center;
+    }
+
+    .topbar,
+    .topbar.centered {
+        grid-template-columns: 58px 1fr;
+    }
+
+    .logo-mark {
+        width: 52px;
+    }
+
+    .admin-shortcut,
+    .topbar.centered::after {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .table {
+        font-size: 10px;
+    }
+
+    .table th,
+    .table td {
+        padding: 5px 4px;
+    }
+}

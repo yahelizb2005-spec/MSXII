@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS XII - Agregar Admin</title>
+    <link rel="stylesheet" href="css/styles.css?v=2">
+</head>
+<body>
+    <main class="page">
+        <section class="window compact" aria-label="Agregar Admin">
+            <div class="topbar centered">
+                <img class="logo-mark" src="img/ms-xii-logo.png" alt="MS XII">
+                <h1 class="title">Agregar Admin &mdash; MS XII</h1>
+                <span></span>
+            </div>
+
+            <form class="form-stack" data-add-admin-form>
+                <label class="field no-icon">
+                    <input type="email" name="email" placeholder="Correo Electr&oacute;nico" autocomplete="email">
+                </label>
+
+                <label class="field no-icon">
+                    <input type="text" name="adminId" placeholder="Crear ID" autocomplete="off">
+                </label>
+
+                <label class="field no-icon">
+                    <input type="password" name="code" placeholder="Nuevo c&oacute;digo" inputmode="numeric" autocomplete="off">
+                </label>
+
+                <label class="field no-icon">
+                    <input type="password" name="confirmCode" placeholder="Confirmar ese c&oacute;digo de Admin" inputmode="numeric" autocomplete="off">
+                </label>
+
+                <p class="form-message" data-message aria-live="polite"></p>
+
+                <div class="button-row">
+                    <button class="button" type="submit">Registrar Admin</button>
+                    <a class="button small" href="users.html">Volver al panel</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        &copy; 2026 MS XII &mdash; Sistema desarrollado por YH3 | Agregar Admin
+    </footer>
+    <script src="js/app.js?v=24"></script>
+</body>
+</html>
+
