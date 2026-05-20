@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MS XII - Agregar cancion</title>
-    <link rel="stylesheet" href="css/styles.css?v=18">
+    <link rel="stylesheet" href="css/styles.css?v=20">
 </head>
 <body>
     <main class="page library-page">
@@ -32,6 +32,10 @@
                 <label>Ano (opcional) <input type="number" name="year" min="1900" max="2100"></label>
                 <label>Etiquetas <input type="text" name="tags" placeholder="rock, 2024, anime"></label>
                 <label>Enlace <input type="text" name="url" placeholder="https://youtube.com/..."></label>
+                <label>Imagen de portada <input type="file" name="cover" accept="image/*" data-cover-input></label>
+                <div class="cover-preview" data-cover-preview tabindex="0">Sin foto</div>
+                <input type="hidden" name="coverData" data-cover-data>
+                <button class="button tiny" type="button" data-paste-cover>Pegar imagen</button>
                 <button class="button small" type="submit">Agregar a mi biblioteca</button>
                 <p class="form-message" data-message aria-live="polite"></p>
             </form>
@@ -41,7 +45,7 @@
     <footer class="site-footer">
         &copy; 2026 MS XII &mdash; Sistema desarrollado por YH3 | Agregar cancion
     </footer>
-    <script src="js/app.js?v=24"></script>
+    <script src="js/app.js?v=26"></script>
 </body>
 </html>
 

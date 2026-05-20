@@ -20,8 +20,7 @@
         "admin-panel.html",
         "users.html",
         "add-admin.html",
-        "stats.html",
-        "support.html"
+        "stats.html"
     ];
 
     var userPages = [
@@ -1018,7 +1017,9 @@
             return;
         }
 
-        form.addEventListener("submit", function (event) {
+        bindCoverPreview(form);
+
+        form.addEventListener("submit", async function (event) {
             event.preventDefault();
             var songs = getSongs();
             songs.push({
@@ -1028,11 +1029,13 @@
                 album: String(form.elements.album.value || "").trim(),
                 year: String(form.elements.year.value || "").trim(),
                 tags: String(form.elements.tags.value || "").trim(),
-                url: normalizeUrl(form.elements.url.value)
+                url: normalizeUrl(form.elements.url.value),
+                cover: String((form.elements.coverData && form.elements.coverData.value) || "") || await fileToDataUrl(form.elements.cover.files && form.elements.cover.files[0])
             });
             saveSongs(songs);
             setMessage(form, "Cancion agregada correctamente.", true);
             form.reset();
+            setCoverPreview(form, "");
         });
     }
 
