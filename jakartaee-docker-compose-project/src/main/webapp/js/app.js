@@ -492,7 +492,7 @@
 
             if (admin) {
                 rememberSession("admin", admin.email);
-                window.location.href = "admin-panel.html";
+                window.location.href = "admin-panel.html?v=26";
                 return;
             }
 
